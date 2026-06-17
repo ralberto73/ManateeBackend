@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <RootNamespace>ManateeBackend.Api</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Serilog.AspNetCore" />
+    <PackageReference Include="Serilog.Settings.Configuration" />
+    <PackageReference Include="Serilog.Sinks.Console" />
+    <PackageReference Include="Serilog.Sinks.File" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ManateeBackend.Application\ManateeBackend.Application.csproj" />
+    <ProjectReference Include="..\ManateeBackend.Infrastructure\ManateeBackend.Infrastructure.csproj" />
+    <ProjectReference Include="..\ManateeBackend.Models\ManateeBackend.Models.csproj" />
+    <ProjectReference Include="..\ManateeBackend.WebServices\ManateeBackend.WebServices.csproj" />
+  </ItemGroup>
+
+</Project>

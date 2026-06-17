@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>ManateeBackend.WebServices.Interfaces</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ManateeBackend.Models\ManateeBackend.Models.csproj" />
+  </ItemGroup>
+
+</Project>
