@@ -15,6 +15,10 @@ public class HealthController : ControllerBase
     }
 
     [HttpGet]
+    [EndpointSummary("Returns API health status.")]
+    [EndpointDescription("Returns the current health status and UTC timestamp of the API.")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public IActionResult Get()
     {
         return Ok(new

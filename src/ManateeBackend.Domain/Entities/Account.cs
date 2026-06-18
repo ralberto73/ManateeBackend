@@ -3,11 +3,15 @@ namespace ManateeBackend.Domain.Entities;
 /// <summary>
 /// Represents an account.
 /// </summary>
-public class Account : BaseEntity
+public class Account
 {
-    public string Name { get; set; } = string.Empty;
+    public Guid Account_Id { get; set; } = Guid.NewGuid();
 
-    public string Email { get; set; } = string.Empty;
+    public string Account_Name { get; set; } = string.Empty;
 
-    public bool IsActive { get; set; } = true;
+    public string Account_Email { get; set; } = string.Empty;
+
+    public bool Account_IsActive { get; set; } = true;
+
+    public DateTime Account_CreatedAtUtc { get; set; } = DateTime.UtcNow;
 }

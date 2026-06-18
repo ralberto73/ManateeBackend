@@ -14,8 +14,11 @@ ManateeBackend.sln
 │   ├── ManateeBackend.Models                  # Shared DTOs/contracts referenced across layers
 │   ├── ManateeBackend.WebServices             # Implementations of external web-service clients
 │   └── ManateeBackend.WebServices.Interfaces  # Abstractions for external web-service clients
-└── tests/
-    └── ManateeBackend.Tests                   # xUnit test project
+├── tests/
+│   └── ManateeBackend.Tests                   # xUnit test project
+├── Scripts/                                   # Build/deployment/dev utility scripts
+├── SQL/                                       # Database schema, migration, and seed scripts
+└── Documentation/                             # Architecture decisions, API references, etc.
 ```
 
 Dependency direction flows inward: `Api` → `Application`/`Infrastructure`/`WebServices`/`Models`; `Infrastructure` → `Application`/`Domain`; `Application` → `Domain`/`Models`/`WebServices.Interfaces`; `WebServices` → `WebServices.Interfaces`/`Models`. `Domain` and `Models` have no project dependencies.

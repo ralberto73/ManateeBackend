@@ -6,11 +6,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="FluentValidation" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ManateeBackend.Application\ManateeBackend.Application.csproj" />
     <ProjectReference Include="..\ManateeBackend.Domain\ManateeBackend.Domain.csproj" />
+    <ProjectReference Include="..\ManateeBackend.Models\ManateeBackend.Models.csproj" />
   </ItemGroup>
 
 </Project>
