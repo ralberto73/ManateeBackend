@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ManateeBackend.Application\ManateeBackend.Application.csproj" />
+    <ProjectReference Include="..\ManateeBackend.Data\ManateeBackend.Data.csproj" />
     <ProjectReference Include="..\ManateeBackend.Domain\ManateeBackend.Domain.csproj" />
     <ProjectReference Include="..\ManateeBackend.Models\ManateeBackend.Models.csproj" />
   </ItemGroup>

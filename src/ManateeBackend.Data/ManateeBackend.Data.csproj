@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>ManateeBackend.Data</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ManateeBackend.Application\ManateeBackend.Application.csproj" />
+    <ProjectReference Include="..\ManateeBackend.Domain\ManateeBackend.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

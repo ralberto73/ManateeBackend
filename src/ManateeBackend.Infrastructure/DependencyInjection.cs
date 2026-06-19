@@ -1,4 +1,5 @@
 using ManateeBackend.Application.Common.Interfaces;
+using ManateeBackend.Data;
 using ManateeBackend.Infrastructure.Services;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,6 +12,8 @@ public static class DependencyInjection
     /// </summary>
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
     {
+        services.AddDataServices();
+
         services.AddSingleton<IDateTimeProvider, SystemDateTimeProvider>();
         services.AddSingleton<IAccountService, AccountService>();
 

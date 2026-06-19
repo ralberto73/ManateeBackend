@@ -1,4 +1,3 @@
-using System.Collections.Concurrent;
 using FluentValidation;
 using ManateeBackend.Application.Accounts;
 using ManateeBackend.Application.Common.Interfaces;
@@ -7,18 +6,15 @@ using ManateeBackend.Models;
 
 namespace ManateeBackend.Infrastructure.Services;
 
-/// <summary>
-/// In-memory implementation of <see cref="IAccountService"/>. Serves as a placeholder
-/// until a persistent store (e.g. EF Core + a database) is introduced.
-/// </summary>
 public class AccountService : IAccountService
 {
-    private readonly ConcurrentDictionary<Guid, Account> _accounts = new();
     private readonly IValidator<CreateAccountRequest> _validator;
+    private readonly IAccountRepository _accountRepository;
 
-    public AccountService(IValidator<CreateAccountRequest> validator)
+    public AccountService(IValidator<CreateAccountRequest> validator, IAccountRepository accountRepository)
     {
         _validator = validator;
+        _accountRepository = accountRepository;
     }
 
     public async Task<AccountCreationResult> CreateAsync(CreateAccountRequest request, CancellationToken cancellationToken = default)
@@ -39,7 +35,7 @@ public class AccountService : IAccountService
             Account_IsActive = request.IsActive
         };
 
-        _accounts[account.Account_Id] = account;
+        _accountRepository.Add(account);
 
         return AccountCreationResult.Success(account);
     }
